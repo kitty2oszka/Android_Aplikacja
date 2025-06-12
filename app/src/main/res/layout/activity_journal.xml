@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="64dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingBottom="24dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dziennik produktów"
+                android:textSize="20sp"
+                android:layout_marginBottom="12dp"
+                android:textStyle="bold" />
+
+            <!-- Objawy -->
+            <TextView android:text="Objawy" android:textStyle="bold" android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Przykładowe przełączniki -->
+            <LinearLayout android:orientation="horizontal"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="space-between"
+                android:layout_marginBottom="16dp">
+                <TextView android:text="Mdłości"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Switch android:id="@+id/switchNausea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:orientation="horizontal"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="space-between"
+                android:layout_marginBottom="16dp">
+                <TextView android:text="Wysypka"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Switch android:id="@+id/switchRash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:orientation="horizontal"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="space-between"
+                android:layout_marginBottom="16dp">
+                <TextView android:text="Wymioty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Switch android:id="@+id/switchVomiting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:orientation="horizontal"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="space-between"
+                android:layout_marginBottom="16dp">
+                <TextView android:text="Kaszel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Switch android:id="@+id/switchCough"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:orientation="horizontal"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="space-between"
+                android:layout_marginBottom="24dp">
+                <TextView android:text="Opuchlizna"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Switch android:id="@+id/switchSwelling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <!-- Notatka -->
+            <TextView android:text="Własna notatka"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp" />
+            <EditText
+                android:id="@+id/noteEditText"
+                android:hint="tutaj dodaje się do dziennika"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/edit_text_background"
+                android:gravity="top"
+                android:padding="12dp" />
+
+            <!-- Przycisk dodania -->
+            <Button
+                android:id="@+id/addToJournalButton"
+                android:text="Dodaj do dziennika"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="32dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/activity_bottom_nav_menu"
+        app:itemIconTint="@color/black"
+        android:background="?android:attr/windowBackground" />
+
+</FrameLayout>
