@@ -81,17 +81,27 @@
             </LinearLayout>
         </HorizontalScrollView>
 
-        <!-- Ikona ładowania zamiast gwiazdek -->
-        <ImageView
-            android:id="@+id/loadingIcon"
+        <!-- RecyclerView for frequently added products -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/frequentProductsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/frequentLabel"
+            android:layout_marginTop="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:clipToPadding="false"
+            android:scrollbars="horizontal" />
+
+        <!-- Button with ImageView replacing the loading icon -->
+        <RelativeLayout
             android:layout_width="250dp"
             android:layout_height="80dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="35dp"
-            android:layout_marginBottom="104dp"
-            android:contentDescription="Ładowanie"
-            android:src="@android:drawable/progress_indeterminate_horizontal" />
+            android:layout_marginBottom="104dp"/>
+
     </RelativeLayout>
 
     <!-- Dolna nawigacja -->

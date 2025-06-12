@@ -21,96 +21,133 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dziennik produktów"
+                android:text="@string/journal_title"
                 android:textSize="20sp"
                 android:layout_marginBottom="12dp"
                 android:textStyle="bold" />
 
             <!-- Objawy -->
-            <TextView android:text="Objawy" android:textStyle="bold" android:textSize="18sp"
+            <TextView
+                android:text="@string/symptoms"
+                android:textStyle="bold"
+                android:textSize="18sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"/>
 
             <!-- Przykładowe przełączniki -->
-            <LinearLayout android:orientation="horizontal"
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:gravity="space-between"
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:layout_marginBottom="16dp">
-                <TextView android:text="Mdłości"
+
+                <TextView
+                    android:text="@string/nausea"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-                <Switch android:id="@+id/switchNausea"
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchNausea"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
 
-            <LinearLayout android:orientation="horizontal"
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:gravity="space-between"
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:layout_marginBottom="16dp">
-                <TextView android:text="Wysypka"
+
+                <TextView
+                    android:text="@string/rash"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-                <Switch android:id="@+id/switchRash"
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchRash"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
 
-            <LinearLayout android:orientation="horizontal"
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:gravity="space-between"
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:layout_marginBottom="16dp">
-                <TextView android:text="Wymioty"
+
+                <TextView
+                    android:text="@string/vomiting"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-                <Switch android:id="@+id/switchVomiting"
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchVomiting"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
 
-            <LinearLayout android:orientation="horizontal"
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:gravity="space-between"
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:layout_marginBottom="16dp">
-                <TextView android:text="Kaszel"
+
+                <TextView
+                    android:text="@string/cough"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-                <Switch android:id="@+id/switchCough"
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchCough"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
 
-            <LinearLayout android:orientation="horizontal"
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:gravity="space-between"
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:layout_marginBottom="24dp">
-                <TextView android:text="Opuchlizna"
+
+                <TextView
+                    android:text="@string/swelling"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-                <Switch android:id="@+id/switchSwelling"
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchSwelling"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
 
             <!-- Notatka -->
-            <TextView android:text="Własna notatka"
+            <TextView
+                android:text="@string/custom_note"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp" />
+
             <EditText
                 android:id="@+id/noteEditText"
-                android:hint="tutaj dodaje się do dziennika"
+                android:hint="@string/journal_hint"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:background="@drawable/edit_text_background"
                 android:gravity="top"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:autofillHints="autofill"
+                android:inputType="textMultiLine" />
 
             <!-- Przycisk dodania -->
             <Button
                 android:id="@+id/addToJournalButton"
-                android:text="Dodaj do dziennika"
+                android:text="@string/add_to_journal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
@@ -124,7 +161,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_alignParentBottom="true"
         app:menu="@menu/activity_bottom_nav_menu"
         app:itemIconTint="@color/black"
         android:background="?android:attr/windowBackground" />
