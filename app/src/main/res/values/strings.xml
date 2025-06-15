@@ -51,11 +51,12 @@
     <string name="nausea">Mdłości</string>
     <string name="rash">Wysypka</string>
     <string name="vomiting">Wymioty</string>
+    <string name="stomachache">Ból brzucha</string>
     <string name="cough">Kaszel</string>
     <string name="swelling">Opuchlizna</string>
     <string name="custom_note">Własna notatka</string>
     <string name="add_to_journal">Dodaj do dziennika</string>
-    <string name="journal_hint">tutaj dodaje się do dziennika</string>
+    <string name="journal_hint">Dodaj własne notatki</string>
     <string name="product_image_description">Product image</string>
     <string name="product_name_placeholder">Product Name</string>
 </resources>

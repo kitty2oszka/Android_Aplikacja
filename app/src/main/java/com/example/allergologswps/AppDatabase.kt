@@ -7,10 +7,11 @@ import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
-@Database(entities = [JournalEntry::class, DateEntity::class], version = 2)
+@Database(entities = [JournalEntry::class, DateEntity::class, Product::class], version = 2)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun journalDao(): JournalDao
     abstract fun dateDao(): DateDao
+    abstract fun productDao(): ProductDao
 
     companion object {
         @Volatile

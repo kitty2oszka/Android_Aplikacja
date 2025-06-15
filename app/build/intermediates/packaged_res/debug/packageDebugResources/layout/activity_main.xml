@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="#FFFFFF">
+
+    <!-- Tekst powitalny -->
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BONJOUR!\nWITAJ!"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Przycisk SIGN UP -->
+    <Button
+        android:id="@+id/signUpButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sign up"
+        android:backgroundTint="#EDE1F7"
+        android:textColor="#000000"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Przycisk SIGN IN -->
+    <Button
+        android:id="@+id/signInButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sign in"
+        android:backgroundTint="#EDE1F7"
+        android:textColor="#000000"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Obrazek arbuza -->
+    <ImageView
+        android:id="@+id/watermelonImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/watermelon"
+        android:contentDescription="Watermelon"/>
+
+</LinearLayout>

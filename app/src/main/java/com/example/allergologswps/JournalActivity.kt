@@ -27,6 +27,7 @@ class JournalActivity : AppCompatActivity() {
         val vomiting = findViewById<Switch>(R.id.switchVomiting)
         val cough = findViewById<Switch>(R.id.switchCough)
         val swelling = findViewById<Switch>(R.id.switchSwelling)
+        val stomachache = findViewById<Switch>(R.id.switchStomachache)
         val note = findViewById<EditText>(R.id.noteEditText)
         val addButton = findViewById<Button>(R.id.addToJournalButton)
         val bottomNav = findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(R.id.bottomNav)
@@ -57,6 +58,7 @@ class JournalActivity : AppCompatActivity() {
             val entry = JournalEntry(
                 nausea = nausea.isChecked,
                 rash = rash.isChecked,
+                stomachache = stomachache.isChecked,
                 vomiting = vomiting.isChecked,
                 cough = cough.isChecked,
                 swelling = swelling.isChecked,

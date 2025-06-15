@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:src="@android:drawable/ic_media_previous"
+        android:contentDescription="Back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        app:tint="#222222" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:text="Select date"
+        android:textSize="22sp"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/pickDateButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Wybierz datę"
+        android:textSize="18sp"
+        android:layout_marginTop="40dp" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Zapisz"
+        android:textSize="18sp"
+        android:layout_marginTop="24dp" />
+</LinearLayout>
