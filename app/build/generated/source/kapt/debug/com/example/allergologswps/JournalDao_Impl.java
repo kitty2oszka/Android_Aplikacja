@@ -37,7 +37,7 @@ public final class JournalDao_Impl implements JournalDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR ABORT INTO `JournalEntry` (`nausea`,`rash`,`vomiting`,`cough`,`swelling`,`note`,`timestamp`,`id`) VALUES (?,?,?,?,?,?,?,nullif(?, 0))";
+        return "INSERT OR ABORT INTO `JournalEntry` (`nausea`,`rash`,`stomachache`,`vomiting`,`cough`,`swelling`,`note`,`timestamp`,`id`) VALUES (?,?,?,?,?,?,?,?,nullif(?, 0))";
       }
 
       @Override
@@ -47,19 +47,21 @@ public final class JournalDao_Impl implements JournalDao {
         statement.bindLong(1, _tmp);
         final int _tmp_1 = entity.getRash() ? 1 : 0;
         statement.bindLong(2, _tmp_1);
-        final int _tmp_2 = entity.getVomiting() ? 1 : 0;
+        final int _tmp_2 = entity.getStomachache() ? 1 : 0;
         statement.bindLong(3, _tmp_2);
-        final int _tmp_3 = entity.getCough() ? 1 : 0;
+        final int _tmp_3 = entity.getVomiting() ? 1 : 0;
         statement.bindLong(4, _tmp_3);
-        final int _tmp_4 = entity.getSwelling() ? 1 : 0;
+        final int _tmp_4 = entity.getCough() ? 1 : 0;
         statement.bindLong(5, _tmp_4);
+        final int _tmp_5 = entity.getSwelling() ? 1 : 0;
+        statement.bindLong(6, _tmp_5);
         if (entity.getNote() == null) {
-          statement.bindNull(6);
+          statement.bindNull(7);
         } else {
-          statement.bindString(6, entity.getNote());
+          statement.bindString(7, entity.getNote());
         }
-        statement.bindLong(7, entity.getTimestamp());
-        statement.bindLong(8, entity.getId());
+        statement.bindLong(8, entity.getTimestamp());
+        statement.bindLong(9, entity.getId());
       }
     };
   }
@@ -95,6 +97,7 @@ public final class JournalDao_Impl implements JournalDao {
         try {
           final int _cursorIndexOfNausea = CursorUtil.getColumnIndexOrThrow(_cursor, "nausea");
           final int _cursorIndexOfRash = CursorUtil.getColumnIndexOrThrow(_cursor, "rash");
+          final int _cursorIndexOfStomachache = CursorUtil.getColumnIndexOrThrow(_cursor, "stomachache");
           final int _cursorIndexOfVomiting = CursorUtil.getColumnIndexOrThrow(_cursor, "vomiting");
           final int _cursorIndexOfCough = CursorUtil.getColumnIndexOrThrow(_cursor, "cough");
           final int _cursorIndexOfSwelling = CursorUtil.getColumnIndexOrThrow(_cursor, "swelling");
@@ -112,18 +115,22 @@ public final class JournalDao_Impl implements JournalDao {
             final int _tmp_1;
             _tmp_1 = _cursor.getInt(_cursorIndexOfRash);
             _tmpRash = _tmp_1 != 0;
-            final boolean _tmpVomiting;
+            final boolean _tmpStomachache;
             final int _tmp_2;
-            _tmp_2 = _cursor.getInt(_cursorIndexOfVomiting);
-            _tmpVomiting = _tmp_2 != 0;
-            final boolean _tmpCough;
+            _tmp_2 = _cursor.getInt(_cursorIndexOfStomachache);
+            _tmpStomachache = _tmp_2 != 0;
+            final boolean _tmpVomiting;
             final int _tmp_3;
-            _tmp_3 = _cursor.getInt(_cursorIndexOfCough);
-            _tmpCough = _tmp_3 != 0;
-            final boolean _tmpSwelling;
+            _tmp_3 = _cursor.getInt(_cursorIndexOfVomiting);
+            _tmpVomiting = _tmp_3 != 0;
+            final boolean _tmpCough;
             final int _tmp_4;
-            _tmp_4 = _cursor.getInt(_cursorIndexOfSwelling);
-            _tmpSwelling = _tmp_4 != 0;
+            _tmp_4 = _cursor.getInt(_cursorIndexOfCough);
+            _tmpCough = _tmp_4 != 0;
+            final boolean _tmpSwelling;
+            final int _tmp_5;
+            _tmp_5 = _cursor.getInt(_cursorIndexOfSwelling);
+            _tmpSwelling = _tmp_5 != 0;
             final String _tmpNote;
             if (_cursor.isNull(_cursorIndexOfNote)) {
               _tmpNote = null;
@@ -134,7 +141,7 @@ public final class JournalDao_Impl implements JournalDao {
             _tmpTimestamp = _cursor.getLong(_cursorIndexOfTimestamp);
             final int _tmpId;
             _tmpId = _cursor.getInt(_cursorIndexOfId);
-            _item = new JournalEntry(_tmpNausea,_tmpRash,_tmpVomiting,_tmpCough,_tmpSwelling,_tmpNote,_tmpTimestamp,_tmpId);
+            _item = new JournalEntry(_tmpNausea,_tmpRash,_tmpStomachache,_tmpVomiting,_tmpCough,_tmpSwelling,_tmpNote,_tmpTimestamp,_tmpId);
             _result.add(_item);
           }
           return _result;

@@ -38,11 +38,11 @@ public final class AppDatabase_Impl extends AppDatabase {
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(2) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS `JournalEntry` (`nausea` INTEGER NOT NULL, `rash` INTEGER NOT NULL, `vomiting` INTEGER NOT NULL, `cough` INTEGER NOT NULL, `swelling` INTEGER NOT NULL, `note` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `JournalEntry` (`nausea` INTEGER NOT NULL, `rash` INTEGER NOT NULL, `stomachache` INTEGER NOT NULL, `vomiting` INTEGER NOT NULL, `cough` INTEGER NOT NULL, `swelling` INTEGER NOT NULL, `note` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `DateEntity` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `date` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `Product` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `note` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd83b51925a95e34b01216bf05d3bdfc5')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5fd988de617d09ab7f28497cfb232146')");
       }
 
       @Override
@@ -93,9 +93,10 @@ public final class AppDatabase_Impl extends AppDatabase {
       @NonNull
       public RoomOpenHelper.ValidationResult onValidateSchema(
           @NonNull final SupportSQLiteDatabase db) {
-        final HashMap<String, TableInfo.Column> _columnsJournalEntry = new HashMap<String, TableInfo.Column>(8);
+        final HashMap<String, TableInfo.Column> _columnsJournalEntry = new HashMap<String, TableInfo.Column>(9);
         _columnsJournalEntry.put("nausea", new TableInfo.Column("nausea", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsJournalEntry.put("rash", new TableInfo.Column("rash", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsJournalEntry.put("stomachache", new TableInfo.Column("stomachache", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsJournalEntry.put("vomiting", new TableInfo.Column("vomiting", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsJournalEntry.put("cough", new TableInfo.Column("cough", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsJournalEntry.put("swelling", new TableInfo.Column("swelling", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -138,7 +139,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "d83b51925a95e34b01216bf05d3bdfc5", "acb5dd33bc317e626160307d1485c005");
+    }, "5fd988de617d09ab7f28497cfb232146", "e93f74359a19ad3957e6a6ee9e94199f");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;

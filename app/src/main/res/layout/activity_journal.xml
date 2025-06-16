@@ -254,8 +254,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/add_to_journal"
                 android:layout_marginTop="32dp"
-                app:cornerRadius="12dp"
-                style="@style/Widget.Material3.Button.Filled" />
+                app:cornerRadius="12dp" />
         </LinearLayout>
     </ScrollView>
 
@@ -267,6 +266,6 @@
         android:layout_gravity="bottom"
         app:menu="@menu/activity_bottom_nav_menu"
         app:itemIconTint="@color/black"
-        app:labelVisibilityMode="labeled"
+        app:labelVisibilityMode="unlabeled"
         android:background="?android:attr/windowBackground" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

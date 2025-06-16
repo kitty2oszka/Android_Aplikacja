@@ -4,32 +4,32 @@ package com.example.allergologswps.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.allergologswps.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ActivityJournalBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final CoordinatorLayout rootView;
 
   @NonNull
-  public final Button addToJournalButton;
+  public final MaterialButton addToJournalButton;
 
   @NonNull
   public final BottomNavigationView bottomNav;
 
   @NonNull
-  public final EditText noteEditText;
+  public final TextInputEditText noteEditText;
 
   @NonNull
   public final SwitchCompat switchCough;
@@ -41,15 +41,19 @@ public final class ActivityJournalBinding implements ViewBinding {
   public final SwitchCompat switchRash;
 
   @NonNull
+  public final SwitchCompat switchStomachache;
+
+  @NonNull
   public final SwitchCompat switchSwelling;
 
   @NonNull
   public final SwitchCompat switchVomiting;
 
-  private ActivityJournalBinding(@NonNull FrameLayout rootView, @NonNull Button addToJournalButton,
-      @NonNull BottomNavigationView bottomNav, @NonNull EditText noteEditText,
-      @NonNull SwitchCompat switchCough, @NonNull SwitchCompat switchNausea,
-      @NonNull SwitchCompat switchRash, @NonNull SwitchCompat switchSwelling,
+  private ActivityJournalBinding(@NonNull CoordinatorLayout rootView,
+      @NonNull MaterialButton addToJournalButton, @NonNull BottomNavigationView bottomNav,
+      @NonNull TextInputEditText noteEditText, @NonNull SwitchCompat switchCough,
+      @NonNull SwitchCompat switchNausea, @NonNull SwitchCompat switchRash,
+      @NonNull SwitchCompat switchStomachache, @NonNull SwitchCompat switchSwelling,
       @NonNull SwitchCompat switchVomiting) {
     this.rootView = rootView;
     this.addToJournalButton = addToJournalButton;
@@ -58,13 +62,14 @@ public final class ActivityJournalBinding implements ViewBinding {
     this.switchCough = switchCough;
     this.switchNausea = switchNausea;
     this.switchRash = switchRash;
+    this.switchStomachache = switchStomachache;
     this.switchSwelling = switchSwelling;
     this.switchVomiting = switchVomiting;
   }
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public CoordinatorLayout getRoot() {
     return rootView;
   }
 
@@ -90,7 +95,7 @@ public final class ActivityJournalBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.addToJournalButton;
-      Button addToJournalButton = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton addToJournalButton = ViewBindings.findChildViewById(rootView, id);
       if (addToJournalButton == null) {
         break missingId;
       }
@@ -102,7 +107,7 @@ public final class ActivityJournalBinding implements ViewBinding {
       }
 
       id = R.id.noteEditText;
-      EditText noteEditText = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText noteEditText = ViewBindings.findChildViewById(rootView, id);
       if (noteEditText == null) {
         break missingId;
       }
@@ -125,6 +130,12 @@ public final class ActivityJournalBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.switchStomachache;
+      SwitchCompat switchStomachache = ViewBindings.findChildViewById(rootView, id);
+      if (switchStomachache == null) {
+        break missingId;
+      }
+
       id = R.id.switchSwelling;
       SwitchCompat switchSwelling = ViewBindings.findChildViewById(rootView, id);
       if (switchSwelling == null) {
@@ -137,8 +148,9 @@ public final class ActivityJournalBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityJournalBinding((FrameLayout) rootView, addToJournalButton, bottomNav,
-          noteEditText, switchCough, switchNausea, switchRash, switchSwelling, switchVomiting);
+      return new ActivityJournalBinding((CoordinatorLayout) rootView, addToJournalButton, bottomNav,
+          noteEditText, switchCough, switchNausea, switchRash, switchStomachache, switchSwelling,
+          switchVomiting);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

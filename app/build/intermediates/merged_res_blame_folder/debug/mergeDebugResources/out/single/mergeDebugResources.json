@@ -4,6 +4,10 @@
         "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\drawable\\ic_dashboard_black_24dp.xml"
     },
     {
+        "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\drawable_note_pad.webp.flat",
+        "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\drawable\\note_pad.webp"
+    },
+    {
         "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
@@ -22,6 +26,10 @@
     {
         "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\drawable_ic_note.png.flat",
         "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\drawable\\ic_note.png"
+    },
+    {
+        "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\drawable_rounded_button_bg.xml.flat",
+        "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\drawable\\rounded_button_bg.xml"
     },
     {
         "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\mipmap-mdpi_ic_launcher.webp.flat",
@@ -72,6 +80,10 @@
         "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\layout\\fragment_second3.xml"
     },
     {
+        "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\drawable_edit_text_background.xml.flat",
+        "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\drawable\\edit_text_background.xml"
+    },
+    {
         "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
@@ -82,10 +94,6 @@
     {
         "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\layout_activity_settings.xml.flat",
         "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\layout\\activity_settings.xml"
-    },
-    {
-        "merged": "com.example.allergologswps.app-debug-75:/drawable_edit_text_background.xml.flat",
-        "source": "com.example.allergologswps.app-main-77:/drawable/edit_text_background.xml"
     },
     {
         "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\xml_data_extraction_rules.xml.flat",
@@ -168,6 +176,10 @@
         "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\layout\\activity_sign_in.xml"
     },
     {
+        "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\drawable_notes_icon.jpg.flat",
+        "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\drawable\\notes_icon.jpg"
+    },
+    {
         "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\navigation_mobile_navigation.xml.flat",
         "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\navigation\\mobile_navigation.xml"
     },
@@ -198,6 +210,10 @@
     {
         "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\layout_activity_choose_date.xml.flat",
         "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\layout\\activity_choose_date.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\drawable_add_button.png.flat",
+        "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\drawable\\add_button.png"
     },
     {
         "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\drawable_ic_home.png.flat",

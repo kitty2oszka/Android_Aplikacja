@@ -37,11 +37,11 @@ class HomeActivity : AppCompatActivity() {
         }
 
         // Dodaj produkt
-        findViewById<LinearLayout>(R.id.addProductButton).setOnClickListener {
+        findViewById<LinearLayout>(R.id.buttom_add_product).setOnClickListener {
             Toast.makeText(this, "Dodawanie produktu – do zaimplementowania", Toast.LENGTH_SHORT).show()
         }
 
-        val loadingIcon = findViewById<ImageView>(R.id.loadingIcon)
+        val loadingIcon = findViewById<ImageView>(R.id.frequentProductsRecyclerView)
         loadingIcon.setOnClickListener {
             startActivity(Intent(this, ProductListActivity::class.java))
         }

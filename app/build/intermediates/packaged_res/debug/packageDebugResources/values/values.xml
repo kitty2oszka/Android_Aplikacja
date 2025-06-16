@@ -15,7 +15,7 @@
     <string name="cough">Kaszel</string>
     <string name="custom_note">Własna notatka</string>
     <string name="first_fragment_label">First Fragment</string>
-    <string name="journal_hint">tutaj dodaje się do dziennika</string>
+    <string name="journal_hint">Dodaj własne notatki</string>
     <string name="journal_title">Dziennik produktów</string>
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
@@ -60,6 +60,7 @@
     <string name="product_name_placeholder">Product Name</string>
     <string name="rash">Wysypka</string>
     <string name="second_fragment_label">Second Fragment</string>
+    <string name="stomachache">Ból brzucha</string>
     <string name="swelling">Opuchlizna</string>
     <string name="symptoms">Objawy</string>
     <string name="title_activity_bottom_nav_menu">bottom_nav_menu</string>

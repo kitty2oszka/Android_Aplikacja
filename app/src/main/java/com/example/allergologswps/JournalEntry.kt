@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey
 data class JournalEntry(
     val nausea: Boolean,
     val rash: Boolean,
+    val stomachache: Boolean,
     val vomiting: Boolean,
     val cough: Boolean,
     val swelling: Boolean,

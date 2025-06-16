@@ -4,33 +4,33 @@ package com.example.allergologswps.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.allergologswps.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ActivityHomeBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final CoordinatorLayout rootView;
 
   @NonNull
-  public final LinearLayout addProductButton;
+  public final MaterialCardView addProductCard;
 
   @NonNull
   public final BottomNavigationView bottomNav;
 
   @NonNull
-  public final ImageView buttomAddProduct;
+  public final ImageButton buttomAddProduct;
 
   @NonNull
   public final TextView frequentLabel;
@@ -41,12 +41,12 @@ public final class ActivityHomeBinding implements ViewBinding {
   @NonNull
   public final TextView homeTitle;
 
-  private ActivityHomeBinding(@NonNull FrameLayout rootView, @NonNull LinearLayout addProductButton,
-      @NonNull BottomNavigationView bottomNav, @NonNull ImageView buttomAddProduct,
-      @NonNull TextView frequentLabel, @NonNull RecyclerView frequentProductsRecyclerView,
-      @NonNull TextView homeTitle) {
+  private ActivityHomeBinding(@NonNull CoordinatorLayout rootView,
+      @NonNull MaterialCardView addProductCard, @NonNull BottomNavigationView bottomNav,
+      @NonNull ImageButton buttomAddProduct, @NonNull TextView frequentLabel,
+      @NonNull RecyclerView frequentProductsRecyclerView, @NonNull TextView homeTitle) {
     this.rootView = rootView;
-    this.addProductButton = addProductButton;
+    this.addProductCard = addProductCard;
     this.bottomNav = bottomNav;
     this.buttomAddProduct = buttomAddProduct;
     this.frequentLabel = frequentLabel;
@@ -56,7 +56,7 @@ public final class ActivityHomeBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public CoordinatorLayout getRoot() {
     return rootView;
   }
 
@@ -81,9 +81,9 @@ public final class ActivityHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.addProductButton;
-      LinearLayout addProductButton = ViewBindings.findChildViewById(rootView, id);
-      if (addProductButton == null) {
+      id = R.id.addProductCard;
+      MaterialCardView addProductCard = ViewBindings.findChildViewById(rootView, id);
+      if (addProductCard == null) {
         break missingId;
       }
 
@@ -94,7 +94,7 @@ public final class ActivityHomeBinding implements ViewBinding {
       }
 
       id = R.id.buttom_add_product;
-      ImageView buttomAddProduct = ViewBindings.findChildViewById(rootView, id);
+      ImageButton buttomAddProduct = ViewBindings.findChildViewById(rootView, id);
       if (buttomAddProduct == null) {
         break missingId;
       }
@@ -117,7 +117,7 @@ public final class ActivityHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityHomeBinding((FrameLayout) rootView, addProductButton, bottomNav,
+      return new ActivityHomeBinding((CoordinatorLayout) rootView, addProductCard, bottomNav,
           buttomAddProduct, frequentLabel, frequentProductsRecyclerView, homeTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
