@@ -41,10 +41,17 @@ public final class ActivityHomeBinding implements ViewBinding {
   @NonNull
   public final TextView homeTitle;
 
+  @NonNull
+  public final TextView recentLabel;
+
+  @NonNull
+  public final RecyclerView recentProductsRecyclerView;
+
   private ActivityHomeBinding(@NonNull CoordinatorLayout rootView,
       @NonNull MaterialCardView addProductCard, @NonNull BottomNavigationView bottomNav,
       @NonNull ImageButton buttomAddProduct, @NonNull TextView frequentLabel,
-      @NonNull RecyclerView frequentProductsRecyclerView, @NonNull TextView homeTitle) {
+      @NonNull RecyclerView frequentProductsRecyclerView, @NonNull TextView homeTitle,
+      @NonNull TextView recentLabel, @NonNull RecyclerView recentProductsRecyclerView) {
     this.rootView = rootView;
     this.addProductCard = addProductCard;
     this.bottomNav = bottomNav;
@@ -52,6 +59,8 @@ public final class ActivityHomeBinding implements ViewBinding {
     this.frequentLabel = frequentLabel;
     this.frequentProductsRecyclerView = frequentProductsRecyclerView;
     this.homeTitle = homeTitle;
+    this.recentLabel = recentLabel;
+    this.recentProductsRecyclerView = recentProductsRecyclerView;
   }
 
   @Override
@@ -117,8 +126,21 @@ public final class ActivityHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.recentLabel;
+      TextView recentLabel = ViewBindings.findChildViewById(rootView, id);
+      if (recentLabel == null) {
+        break missingId;
+      }
+
+      id = R.id.recentProductsRecyclerView;
+      RecyclerView recentProductsRecyclerView = ViewBindings.findChildViewById(rootView, id);
+      if (recentProductsRecyclerView == null) {
+        break missingId;
+      }
+
       return new ActivityHomeBinding((CoordinatorLayout) rootView, addProductCard, bottomNav,
-          buttomAddProduct, frequentLabel, frequentProductsRecyclerView, homeTitle);
+          buttomAddProduct, frequentLabel, frequentProductsRecyclerView, homeTitle, recentLabel,
+          recentProductsRecyclerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

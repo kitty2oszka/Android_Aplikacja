@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.allergologswps.app-mergeDebugResources-73:/values-v30/values-v30.xml",
+            "outputFile": "com.example.allergologswps.app-mergeDebugResources-74:/values-v30/values-v30.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Gaja\\.gradle\\caches\\8.11.1\\transforms\\911840f0fd95b74b8be2a4aed908774d\\transformed\\material3-release\\res\\values-v30\\values-v30.xml",
+                    "source": "/Users/oszkamrozowicz/.gradle/caches/8.11.1/transforms/911840f0fd95b74b8be2a4aed908774d/transformed/material3-release/res/values-v30/values-v30.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

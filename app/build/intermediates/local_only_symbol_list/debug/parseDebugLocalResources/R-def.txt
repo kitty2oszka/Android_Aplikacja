@@ -23,6 +23,7 @@ drawable ic_person
 drawable note_pad
 drawable notes_icon
 drawable rounded_button_bg
+drawable rounded_image_background
 drawable watermelon
 id addProductCard
 id addToJournalButton
@@ -47,11 +48,15 @@ id navigation_notifications
 id noteEditText
 id passwordEditText
 id pickDateButton
+id productImage
 id productListBack
 id productListTitle
+id productName
 id productNameEditText
 id productNoteEditText
 id productRecyclerView
+id recentLabel
+id recentProductsRecyclerView
 id registerButton
 id saveButton
 id saveProductButton
@@ -76,6 +81,7 @@ layout activity_product_list
 layout activity_settings
 layout activity_sign_in
 layout activity_sign_up
+layout item_product
 menu activity_bottom_nav_menu
 menu bottom_nav_menu
 mipmap ic_launcher
