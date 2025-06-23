@@ -26,10 +26,12 @@
 
     <Button
         android:id="@+id/saveProductButton"
-        android:text="Zapisz"
-        android:layout_marginTop="24dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="24dp"
+        android:text="Zapisz"
+        android:textSize="17sp" />
 
     <ImageView
         android:id="@+id/add_product_return"

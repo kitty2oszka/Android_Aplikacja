@@ -31,6 +31,7 @@ id backButton
 id bottomNav
 id buttom_add_product
 id confirmPasswordEditText
+id content_container
 id dateTextView
 id emailEditText
 id frequentLabel
@@ -38,7 +39,6 @@ id frequentProductsRecyclerView
 id homeTitle
 id navView
 id nav_home
-id nav_host_fragment_activity_bottom_nav_menu
 id nav_journal
 id nav_profile
 id navigation_dashboard

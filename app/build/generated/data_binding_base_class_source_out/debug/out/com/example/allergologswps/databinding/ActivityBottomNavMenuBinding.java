@@ -4,6 +4,7 @@ package com.example.allergologswps.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
@@ -20,11 +21,15 @@ public final class ActivityBottomNavMenuBinding implements ViewBinding {
   private final CoordinatorLayout rootView;
 
   @NonNull
+  public final FrameLayout contentContainer;
+
+  @NonNull
   public final BottomNavigationView navView;
 
   private ActivityBottomNavMenuBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull BottomNavigationView navView) {
+      @NonNull FrameLayout contentContainer, @NonNull BottomNavigationView navView) {
     this.rootView = rootView;
+    this.contentContainer = contentContainer;
     this.navView = navView;
   }
 
@@ -55,13 +60,20 @@ public final class ActivityBottomNavMenuBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.content_container;
+      FrameLayout contentContainer = ViewBindings.findChildViewById(rootView, id);
+      if (contentContainer == null) {
+        break missingId;
+      }
+
       id = R.id.navView;
       BottomNavigationView navView = ViewBindings.findChildViewById(rootView, id);
       if (navView == null) {
         break missingId;
       }
 
-      return new ActivityBottomNavMenuBinding((CoordinatorLayout) rootView, navView);
+      return new ActivityBottomNavMenuBinding((CoordinatorLayout) rootView, contentContainer,
+          navView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

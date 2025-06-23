@@ -6,6 +6,7 @@ import android.content.Intent
 import android.widget.LinearLayout
 import android.widget.Toast
 import android.widget.ImageView
+import com.example.allergologswps.setupBottomNav
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +17,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        setupBottomNav(R.id.nav_home)
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
 

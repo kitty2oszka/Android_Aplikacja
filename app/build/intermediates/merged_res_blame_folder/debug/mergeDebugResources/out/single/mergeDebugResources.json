@@ -4,12 +4,12 @@
         "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\drawable\\ic_dashboard_black_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\drawable_note_pad.webp.flat",
-        "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\drawable\\note_pad.webp"
-    },
-    {
         "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\drawable_note_pad.webp.flat",
+        "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\drawable\\note_pad.webp"
     },
     {
         "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\drawable_ic_home_black_24dp.xml.flat",
@@ -52,6 +52,10 @@
         "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\drawable\\watermelon.png"
     },
     {
+        "merged": "com.example.allergologswps.app-debug-75:/layout_activity_journal.xml.flat",
+        "source": "com.example.allergologswps.app-main-77:/layout/activity_journal.xml"
+    },
+    {
         "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\drawable\\ic_launcher_background.xml"
     },
@@ -86,6 +90,10 @@
     {
         "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-main-77:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.allergologswps.app-debug-75:/layout_activity_add_product.xml.flat",
+        "source": "com.example.allergologswps.app-main-77:/layout/activity_add_product.xml"
     },
     {
         "merged": "C:\\Users\\Gaja\\.gradle\\daemon\\8.11.1\\com.example.allergologswps.app-debug-75:\\layout_activity_home.xml.flat",

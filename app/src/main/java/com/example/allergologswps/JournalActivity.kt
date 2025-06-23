@@ -21,6 +21,7 @@ class JournalActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_journal)
+        setupBottomNav(R.id.nav_journal)
 
         val nausea = findViewById<Switch>(R.id.switchNausea)
         val rash = findViewById<Switch>(R.id.switchRash)

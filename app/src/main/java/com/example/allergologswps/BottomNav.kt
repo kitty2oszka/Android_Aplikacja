@@ -1,35 +1,41 @@
 package com.example.allergologswps
 
+import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.example.allergologswps.databinding.ActivityBottomNavMenuBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class BottomNav : AppCompatActivity() {
+open class BottomNav : AppCompatActivity() {
 
-    private lateinit var binding: ActivityBottomNavMenuBinding
+    protected fun setupBottomNav(selectedItemId: Int) {
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
+        bottomNav.selectedItemId = selectedItemId
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        binding = ActivityBottomNavMenuBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        val navView: BottomNavigationView = binding.navView
-
-        val navController = findNavController(R.id.nav_host_fragment_activity_bottom_nav_menu)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        bottomNav.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.nav_home -> {
+                    if (selectedItemId != R.id.nav_home) {
+                        startActivity(Intent(this, HomeActivity::class.java))
+                        finish()
+                    }
+                    true
+                }
+                R.id.nav_journal -> {
+                    if (selectedItemId != R.id.nav_journal) {
+                        startActivity(Intent(this, JournalActivity::class.java))
+                        finish()
+                    }
+                    true
+                }
+                R.id.nav_profile -> {
+                    if (selectedItemId != R.id.nav_profile) {
+                        startActivity(Intent(this, ProfileActivity::class.java))
+                        finish()
+                    }
+                    true
+                }
+                else -> false
+            }
+        }
     }
 }

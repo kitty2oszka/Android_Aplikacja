@@ -9,6 +9,7 @@ class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
+        setupBottomNav(R.id.nav_profile)
         title = "Ustawienia"
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)

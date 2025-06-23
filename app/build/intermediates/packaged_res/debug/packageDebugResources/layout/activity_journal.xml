@@ -45,7 +45,6 @@
                 android:orientation="vertical"
                 android:layout_marginBottom="24dp">
 
-                <!-- Przykład jednego z objawów -->
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
