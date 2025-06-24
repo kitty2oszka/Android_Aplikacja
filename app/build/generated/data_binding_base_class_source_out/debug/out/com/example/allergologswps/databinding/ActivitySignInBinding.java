@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +22,9 @@ public final class ActivitySignInBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
+  public final ImageView backButton;
+
+  @NonNull
   public final EditText emailEditText;
 
   @NonNull
@@ -29,9 +33,11 @@ public final class ActivitySignInBinding implements ViewBinding {
   @NonNull
   public final Button registerButton;
 
-  private ActivitySignInBinding(@NonNull ScrollView rootView, @NonNull EditText emailEditText,
-      @NonNull EditText passwordEditText, @NonNull Button registerButton) {
+  private ActivitySignInBinding(@NonNull ScrollView rootView, @NonNull ImageView backButton,
+      @NonNull EditText emailEditText, @NonNull EditText passwordEditText,
+      @NonNull Button registerButton) {
     this.rootView = rootView;
+    this.backButton = backButton;
     this.emailEditText = emailEditText;
     this.passwordEditText = passwordEditText;
     this.registerButton = registerButton;
@@ -64,6 +70,12 @@ public final class ActivitySignInBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.backButton;
+      ImageView backButton = ViewBindings.findChildViewById(rootView, id);
+      if (backButton == null) {
+        break missingId;
+      }
+
       id = R.id.emailEditText;
       EditText emailEditText = ViewBindings.findChildViewById(rootView, id);
       if (emailEditText == null) {
@@ -82,8 +94,8 @@ public final class ActivitySignInBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySignInBinding((ScrollView) rootView, emailEditText, passwordEditText,
-          registerButton);
+      return new ActivitySignInBinding((ScrollView) rootView, backButton, emailEditText,
+          passwordEditText, registerButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

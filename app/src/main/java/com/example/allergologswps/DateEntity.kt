@@ -6,6 +6,6 @@ import androidx.room.PrimaryKey
 @Entity
 data class DateEntity(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
-    val date: String
+    val date: String,
+    val imageUrl: String
 )
-

@@ -25,10 +25,6 @@
             android:exported="false"
             android:theme="@style/Theme.AllergoLogSwps" />
         <activity
-            android:name=".bottom_nav_menu"
-            android:exported="false"
-            android:label="@string/title_activity_bottom_nav_menu" />
-        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity

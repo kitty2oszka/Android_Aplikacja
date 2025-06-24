@@ -1,18 +1,13 @@
 package com.example.allergologswps
 
 import android.os.Bundle
-import android.widget.Button
 import android.content.Intent
 import android.widget.LinearLayout
 import android.widget.Toast
-import android.widget.ImageView
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.allergologswps.api.OpenFoodFactsApi
 import com.example.allergologswps.api.ProductDetail
 import com.example.allergologswps.api.ProductResponse
@@ -21,6 +16,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import android.os.Handler
+import android.os.Looper
+import org.json.JSONObject
+import java.net.HttpURLConnection
+import java.net.URL
+import java.util.concurrent.Executors
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,12 +29,10 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
-
-        bottomNav.selectedItemId = R.id.nav_home // zaznaczony domyślnie
-
+        bottomNav.selectedItemId = R.id.nav_home
         bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.nav_home -> true // nic nie rób, już jesteśmy
+                R.id.nav_home -> true
                 R.id.nav_journal -> {
                     startActivity(Intent(this, JournalActivity::class.java))
                     true
@@ -49,11 +48,6 @@ class HomeActivity : AppCompatActivity() {
         // Dodaj produkt
         findViewById<LinearLayout>(R.id.buttom_add_product).setOnClickListener {
             Toast.makeText(this, "Dodawanie produktu – do zaimplementowania", Toast.LENGTH_SHORT).show()
-        }
-
-        val loadingIcon = findViewById<ImageView>(R.id.frequentProductsRecyclerView)
-        loadingIcon.setOnClickListener {
-            startActivity(Intent(this, ProductListActivity::class.java))
         }
 
         // Ostatnio dodane produkty
@@ -90,6 +84,49 @@ class HomeActivity : AppCompatActivity() {
                     // Obsługa błędu (np. log)
                 }
             })
+        }
+
+        // CZĘSTO DODAWANE
+        val frequentRecyclerView = findViewById<RecyclerView>(R.id.frequentProductsRecyclerView)
+        frequentRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        val products = mutableListOf<ProductApi>()
+        val adapter = ProductAdapter(products)
+        frequentRecyclerView.adapter = adapter
+
+        val handler = Handler(Looper.getMainLooper())
+        val executor = Executors.newSingleThreadExecutor()
+        val productIds = listOf(
+            "737628064502", // Heinz Tomato Ketchup
+            "3017620422003", // Nutella
+            "5000159484695", // Coca-Cola
+            "7622210449283"  // Milka
+        )
+        for (id in productIds) {
+            executor.execute {
+                try {
+                    val url = URL("https://world.openfoodfacts.org/api/v0/product/$id.json")
+                    val conn = url.openConnection() as HttpURLConnection
+                    conn.requestMethod = "GET"
+                    conn.connectTimeout = 5000
+                    conn.readTimeout = 5000
+                    val responseCode = conn.responseCode
+                    if (responseCode == 200) {
+                        val stream = conn.inputStream.bufferedReader().use { it.readText() }
+                        val json = JSONObject(stream)
+                        val productJson = json.optJSONObject("product")
+                        val name = productJson?.optString("product_name") ?: "Brak nazwy"
+                        val imageUrl = productJson?.optString("image_front_small_url")
+                        val product = ProductApi(id, name, imageUrl)
+                        handler.post {
+                            products.add(product)
+                            adapter.notifyItemInserted(products.size - 1)
+                        }
+                    }
+                    conn.disconnect()
+                } catch (_: Exception) {
+                    // Możesz dodać logowanie błędów
+                }
+            }
         }
     }
 }

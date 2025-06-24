@@ -3,6 +3,8 @@ package com.example.allergologswps;
 import android.database.Cursor;
 import android.os.CancellationSignal;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.lifecycle.LiveData;
 import androidx.room.CoroutinesRoom;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
@@ -10,6 +12,7 @@ import androidx.room.RoomSQLiteQuery;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
+import com.example.allergologswps.models.FrequentProduct;
 import java.lang.Class;
 import java.lang.Exception;
 import java.lang.Object;
@@ -37,7 +40,7 @@ public final class DateDao_Impl implements DateDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR ABORT INTO `DateEntity` (`id`,`date`) VALUES (nullif(?, 0),?)";
+        return "INSERT OR ABORT INTO `DateEntity` (`id`,`date`,`imageUrl`) VALUES (nullif(?, 0),?,?)";
       }
 
       @Override
@@ -48,6 +51,11 @@ public final class DateDao_Impl implements DateDao {
           statement.bindNull(2);
         } else {
           statement.bindString(2, entity.getDate());
+        }
+        if (entity.getImageUrl() == null) {
+          statement.bindNull(3);
+        } else {
+          statement.bindString(3, entity.getImageUrl());
         }
       }
     };
@@ -85,6 +93,7 @@ public final class DateDao_Impl implements DateDao {
         try {
           final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
           final int _cursorIndexOfDate = CursorUtil.getColumnIndexOrThrow(_cursor, "date");
+          final int _cursorIndexOfImageUrl = CursorUtil.getColumnIndexOrThrow(_cursor, "imageUrl");
           final List<DateEntity> _result = new ArrayList<DateEntity>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final DateEntity _item;
@@ -96,7 +105,13 @@ public final class DateDao_Impl implements DateDao {
             } else {
               _tmpDate = _cursor.getString(_cursorIndexOfDate);
             }
-            _item = new DateEntity(_tmpId,_tmpDate);
+            final String _tmpImageUrl;
+            if (_cursor.isNull(_cursorIndexOfImageUrl)) {
+              _tmpImageUrl = null;
+            } else {
+              _tmpImageUrl = _cursor.getString(_cursorIndexOfImageUrl);
+            }
+            _item = new DateEntity(_tmpId,_tmpDate,_tmpImageUrl);
             _result.add(_item);
           }
           return _result;
@@ -106,6 +121,50 @@ public final class DateDao_Impl implements DateDao {
         }
       }
     }, $completion);
+  }
+
+  @Override
+  public LiveData<List<FrequentProduct>> getMostFrequentProducts() {
+    final String _sql = "\n"
+            + "        SELECT imageUrl, COUNT(imageUrl) as count\n"
+            + "        FROM DateEntity\n"
+            + "        GROUP BY imageUrl\n"
+            + "        ORDER BY count DESC\n"
+            + "    ";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    return __db.getInvalidationTracker().createLiveData(new String[] {"DateEntity"}, false, new Callable<List<FrequentProduct>>() {
+      @Override
+      @Nullable
+      public List<FrequentProduct> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfImageUrl = 0;
+          final int _cursorIndexOfCount = 1;
+          final List<FrequentProduct> _result = new ArrayList<FrequentProduct>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final FrequentProduct _item;
+            final String _tmpImageUrl;
+            if (_cursor.isNull(_cursorIndexOfImageUrl)) {
+              _tmpImageUrl = null;
+            } else {
+              _tmpImageUrl = _cursor.getString(_cursorIndexOfImageUrl);
+            }
+            final int _tmpCount;
+            _tmpCount = _cursor.getInt(_cursorIndexOfCount);
+            _item = new FrequentProduct(_tmpImageUrl,_tmpCount);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
   }
 
   @NonNull

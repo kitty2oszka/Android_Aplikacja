@@ -18,6 +18,7 @@ class SignInActivity : AppCompatActivity() {
         val emailField = findViewById<EditText>(R.id.emailEditText)
         val passwordField = findViewById<EditText>(R.id.passwordEditText)
         val signInButton = findViewById<Button>(R.id.registerButton)
+        val backButton = findViewById<android.widget.ImageView>(R.id.backButton)
 
         signInButton.setOnClickListener {
             val email = emailField.text.toString()
@@ -34,6 +35,11 @@ class SignInActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Błędny login lub hasło", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        backButton.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
     }
 }

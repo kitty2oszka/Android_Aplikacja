@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:2:1-53:12
-INJECTED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:2:1-53:12
-INJECTED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:2:1-53:12
-INJECTED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:2:1-53:12
+ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:2:1-49:12
 MERGED from [androidx.databinding:viewbinding:8.8.0] /Users/oszkamrozowicz/.gradle/caches/8.11.1/transforms/8a957baab75b99c4a2fa7b4fc9791fdf/transformed/viewbinding-8.8.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-runtime-android:2.9.0] /Users/oszkamrozowicz/.gradle/caches/8.11.1/transforms/90df28ea4efac0505ab4cd2e91e05a4a/transformed/navigation-runtime-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-android:2.9.0] /Users/oszkamrozowicz/.gradle/caches/8.11.1/transforms/8e1e7c2f1caa8e7b294c472fba848075/transformed/navigation-common-release/AndroidManifest.xml:17:1-22:12
@@ -106,8 +106,8 @@ MERGED from [androidx.print:print:1.0.0] /Users/oszkamrozowicz/.gradle/caches/8.
 	xmlns:android
 		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:5:5-51:19
-INJECTED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:5:5-51:19
+ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:5:5-47:19
+INJECTED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:5:5-47:19
 MERGED from [com.google.android.material:material:1.12.0] /Users/oszkamrozowicz/.gradle/caches/8.11.1/transforms/b4701151183fc10d9a9383717e987969/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] /Users/oszkamrozowicz/.gradle/caches/8.11.1/transforms/b4701151183fc10d9a9383717e987969/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] /Users/oszkamrozowicz/.gradle/caches/8.11.1/transforms/bb49f98c46dd3cd8329f5f1514fcd6eb/transformed/constraintlayout-2.2.1/AndroidManifest.xml:7:5-20
@@ -178,52 +178,44 @@ ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/ma
 		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:26:13-56
 	android:name
 		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:24:13-47
-activity#com.example.allergologswps.bottom_nav_menu
-ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:27:9-30:70
-	android:label
-		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:30:13-67
+activity#com.example.allergologswps.HomeActivity
+ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:27:9-29:40
 	android:exported
 		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:29:13-37
 	android:name
-		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:28:13-44
-activity#com.example.allergologswps.HomeActivity
-ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:31:9-33:40
-	android:exported
-		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:33:13-37
-	android:name
-		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:32:13-41
+		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:28:13-41
 activity#com.example.allergologswps.SignInActivity
-ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:34:9-36:40
+ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:30:9-32:40
 	android:exported
-		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:36:13-37
+		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:32:13-37
 	android:name
-		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:35:13-43
+		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:31:13-43
 activity#com.example.allergologswps.SignUpActivity
-ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:37:9-39:40
+ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:33:9-35:40
 	android:exported
-		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:39:13-37
+		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:35:13-37
 	android:name
-		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:38:13-43
+		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:34:13-43
 activity#com.example.allergologswps.MainActivity
-ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:40:9-50:20
+ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:36:9-46:20
 	android:label
-		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:43:13-45
+		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:39:13-45
 	android:exported
-		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:42:13-36
+		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:38:13-36
 	android:theme
-		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:44:13-56
+		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:40:13-56
 	android:name
-		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:41:13-41
+		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:37:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:45:13-49:29
+ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:41:13-45:29
 action#android.intent.action.MAIN
-ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:46:17-69
+ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:42:17-69
 	android:name
-		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:46:25-66
+		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:42:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:48:17-77
+ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:44:17-77
 	android:name
-		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:48:27-74
+		ADDED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml:44:27-74
 uses-sdk
 INJECTED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/oszkamrozowicz/AndroidStudioProjects/AllergoLogSwps/app/src/main/AndroidManifest.xml

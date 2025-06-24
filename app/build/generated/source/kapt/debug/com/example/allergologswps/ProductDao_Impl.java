@@ -31,22 +31,26 @@ public final class ProductDao_Impl implements ProductDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR ABORT INTO `Product` (`id`,`name`,`note`) VALUES (nullif(?, 0),?,?)";
+        return "INSERT OR ABORT INTO `Product` (`id`,`name`,`imageUrl`) VALUES (?,?,?)";
       }
 
       @Override
       protected void bind(@NonNull final SupportSQLiteStatement statement,
           @NonNull final Product entity) {
-        statement.bindLong(1, entity.getId());
+        if (entity.getId() == null) {
+          statement.bindNull(1);
+        } else {
+          statement.bindString(1, entity.getId());
+        }
         if (entity.getName() == null) {
           statement.bindNull(2);
         } else {
           statement.bindString(2, entity.getName());
         }
-        if (entity.getNote() == null) {
+        if (entity.getImageUrl() == null) {
           statement.bindNull(3);
         } else {
-          statement.bindString(3, entity.getNote());
+          statement.bindString(3, entity.getImageUrl());
         }
       }
     };

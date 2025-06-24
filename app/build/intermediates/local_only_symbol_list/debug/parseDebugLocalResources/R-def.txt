@@ -31,6 +31,8 @@ id add_product_return
 id backButton
 id bottomNav
 id buttom_add_product
+id changeEmailButton
+id changePasswordButton
 id confirmPasswordEditText
 id dateTextView
 id emailEditText
@@ -45,13 +47,14 @@ id nav_profile
 id navigation_dashboard
 id navigation_home
 id navigation_notifications
+id newsletterSwitch
 id noteEditText
 id passwordEditText
 id pickDateButton
+id productId
 id productImage
 id productListBack
 id productListTitle
-id productName
 id productNameEditText
 id productNoteEditText
 id productRecyclerView

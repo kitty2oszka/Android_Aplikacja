@@ -1,0 +1,14 @@
+# Android Studio
+.gradle/
+.idea/
+local.properties
+*.iml
+build/
+captures/
+.externalNativeBuild/
+
+# macOS
+.DS_Store
+
+# Jetpack Compose preview cache
+**/build/

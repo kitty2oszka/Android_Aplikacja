@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +22,9 @@ public final class ActivitySignUpBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
+  public final ImageView backButton;
+
+  @NonNull
   public final EditText confirmPasswordEditText;
 
   @NonNull
@@ -32,10 +36,11 @@ public final class ActivitySignUpBinding implements ViewBinding {
   @NonNull
   public final Button registerButton;
 
-  private ActivitySignUpBinding(@NonNull ScrollView rootView,
+  private ActivitySignUpBinding(@NonNull ScrollView rootView, @NonNull ImageView backButton,
       @NonNull EditText confirmPasswordEditText, @NonNull EditText emailEditText,
       @NonNull EditText passwordEditText, @NonNull Button registerButton) {
     this.rootView = rootView;
+    this.backButton = backButton;
     this.confirmPasswordEditText = confirmPasswordEditText;
     this.emailEditText = emailEditText;
     this.passwordEditText = passwordEditText;
@@ -69,6 +74,12 @@ public final class ActivitySignUpBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.backButton;
+      ImageView backButton = ViewBindings.findChildViewById(rootView, id);
+      if (backButton == null) {
+        break missingId;
+      }
+
       id = R.id.confirmPasswordEditText;
       EditText confirmPasswordEditText = ViewBindings.findChildViewById(rootView, id);
       if (confirmPasswordEditText == null) {
@@ -93,7 +104,7 @@ public final class ActivitySignUpBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySignUpBinding((ScrollView) rootView, confirmPasswordEditText,
+      return new ActivitySignUpBinding((ScrollView) rootView, backButton, confirmPasswordEditText,
           emailEditText, passwordEditText, registerButton);
     }
     String missingId = rootView.getResources().getResourceName(id);

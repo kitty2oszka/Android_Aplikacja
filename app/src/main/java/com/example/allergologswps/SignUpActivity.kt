@@ -1,5 +1,6 @@
 package com.example.allergologswps
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Button
@@ -16,6 +17,7 @@ class SignUpActivity : AppCompatActivity() {
         val passwordEditText = findViewById<EditText>(R.id.passwordEditText)
         val confirmPasswordEditText = findViewById<EditText>(R.id.confirmPasswordEditText)
         val registerButton = findViewById<Button>(R.id.registerButton)
+        val backButton = findViewById<android.widget.ImageView>(R.id.backButton)
 
         registerButton.setOnClickListener {
             val email = emailEditText.text.toString().trim()
@@ -39,8 +41,18 @@ class SignUpActivity : AppCompatActivity() {
             }
 
             // Jeśli wszystko OK:
+            // Zapisz dane do SharedPreferences
+            val prefs = getSharedPreferences("auth", MODE_PRIVATE)
+            prefs.edit().putString("email", email).putString("password", password).apply()
             showToast("Rejestracja zakończona sukcesem!")
-            // Tu możesz zapisać użytkownika do bazy lub wysłać do Firebase
+            // Przejście do ekranu głównego po rejestracji
+            startActivity(Intent(this, HomeActivity::class.java))
+            finish()
+        }
+
+        backButton.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
     }
 

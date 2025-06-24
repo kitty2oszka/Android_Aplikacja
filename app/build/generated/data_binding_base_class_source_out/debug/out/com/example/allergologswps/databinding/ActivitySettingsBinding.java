@@ -4,6 +4,8 @@ package com.example.allergologswps.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -12,6 +14,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.allergologswps.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -24,12 +27,35 @@ public final class ActivitySettingsBinding implements ViewBinding {
   public final BottomNavigationView bottomNav;
 
   @NonNull
+  public final Button changeEmailButton;
+
+  @NonNull
+  public final Button changePasswordButton;
+
+  @NonNull
+  public final EditText emailEditText;
+
+  @NonNull
+  public final SwitchMaterial newsletterSwitch;
+
+  @NonNull
+  public final EditText passwordEditText;
+
+  @NonNull
   public final TextView settingsTitle;
 
   private ActivitySettingsBinding(@NonNull FrameLayout rootView,
-      @NonNull BottomNavigationView bottomNav, @NonNull TextView settingsTitle) {
+      @NonNull BottomNavigationView bottomNav, @NonNull Button changeEmailButton,
+      @NonNull Button changePasswordButton, @NonNull EditText emailEditText,
+      @NonNull SwitchMaterial newsletterSwitch, @NonNull EditText passwordEditText,
+      @NonNull TextView settingsTitle) {
     this.rootView = rootView;
     this.bottomNav = bottomNav;
+    this.changeEmailButton = changeEmailButton;
+    this.changePasswordButton = changePasswordButton;
+    this.emailEditText = emailEditText;
+    this.newsletterSwitch = newsletterSwitch;
+    this.passwordEditText = passwordEditText;
     this.settingsTitle = settingsTitle;
   }
 
@@ -66,13 +92,44 @@ public final class ActivitySettingsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.changeEmailButton;
+      Button changeEmailButton = ViewBindings.findChildViewById(rootView, id);
+      if (changeEmailButton == null) {
+        break missingId;
+      }
+
+      id = R.id.changePasswordButton;
+      Button changePasswordButton = ViewBindings.findChildViewById(rootView, id);
+      if (changePasswordButton == null) {
+        break missingId;
+      }
+
+      id = R.id.emailEditText;
+      EditText emailEditText = ViewBindings.findChildViewById(rootView, id);
+      if (emailEditText == null) {
+        break missingId;
+      }
+
+      id = R.id.newsletterSwitch;
+      SwitchMaterial newsletterSwitch = ViewBindings.findChildViewById(rootView, id);
+      if (newsletterSwitch == null) {
+        break missingId;
+      }
+
+      id = R.id.passwordEditText;
+      EditText passwordEditText = ViewBindings.findChildViewById(rootView, id);
+      if (passwordEditText == null) {
+        break missingId;
+      }
+
       id = R.id.settingsTitle;
       TextView settingsTitle = ViewBindings.findChildViewById(rootView, id);
       if (settingsTitle == null) {
         break missingId;
       }
 
-      return new ActivitySettingsBinding((FrameLayout) rootView, bottomNav, settingsTitle);
+      return new ActivitySettingsBinding((FrameLayout) rootView, bottomNav, changeEmailButton,
+          changePasswordButton, emailEditText, newsletterSwitch, passwordEditText, settingsTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

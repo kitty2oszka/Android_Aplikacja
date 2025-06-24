@@ -63,7 +63,7 @@ class ChooseDateActivity : AppCompatActivity() {
     }
 
     private fun saveDateToDatabase(date: String) {
-        val dateEntity = DateEntity(date = date)
+        val dateEntity = DateEntity(date = date, imageUrl = "") // TODO: podaj właściwy URL jeśli jest dostępny
         CoroutineScope(Dispatchers.IO).launch {
             AppDatabase.getDatabase(this@ChooseDateActivity).dateDao().insertDate(dateEntity)
         }

@@ -22,7 +22,6 @@ class AddProductActivity : AppCompatActivity() {
         setContentView(R.layout.activity_add_product)
 
         val nameEdit = findViewById<EditText>(R.id.productNameEditText)
-        val noteEdit = findViewById<EditText>(R.id.productNoteEditText)
         val saveButton = findViewById<Button>(R.id.saveProductButton)
 
         val db = AppDatabase.getDatabase(this)
@@ -30,10 +29,13 @@ class AddProductActivity : AppCompatActivity() {
 
         saveButton.setOnClickListener {
             val name = nameEdit.text.toString()
-            val note = noteEdit.text.toString()
 
             if (name.isNotEmpty()) {
-                val product = Product(name = name, note = note)
+                val product = Product(
+                    id = System.currentTimeMillis().toString(), // proste unikalne id
+                    name = name,
+                    imageUrl = null // jeśli chcesz, możesz dodać pole do formularza
+                )
                 lifecycleScope.launch {
                     dao.insert(product)
                     finish() // wróć do Home

@@ -2,7 +2,6 @@ package com.example.allergologswps
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.allergologswps.databinding.ActivityMainBinding
 
@@ -21,7 +20,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.signInButton.setOnClickListener {
-            Toast.makeText(this, "Sign in clicked", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, SignInActivity::class.java)
+            startActivity(intent)
         }
     }
 }
